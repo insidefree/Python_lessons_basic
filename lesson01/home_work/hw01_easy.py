@@ -1,34 +1,34 @@
 # Задача-1: Дано произвольное целое число, вывести поочередно цифры исходного числа
 # код пишем тут...
-number = 1234089010
-temp = number
-bit = 0
+NUMBER = 1234089010
+TEMP = NUMBER
+BIT = 0
 
-while temp:
-    bit += 1
-    temp = temp // 10
+while TEMP:
+    BIT += 1
+    TEMP = TEMP // 10
 
-while bit:
-    bit -= 1
-    print("bit", number // (10**bit))
+while BIT:
+    BIT -= 1
+    print("bit", NUMBER // (10**BIT))
 
 
 # Задача-2: Исходные значения двух переменных запросить у пользователя.
 # Поменять значения переменных местами. Вывести новые значения на экран.
 # Не нужно решать задачу так: print("a = ", b, "b = ", a) - это неправильное решение!
 
-a = input("a = ")
-b = input("b = ")
-temp = a
-a = b
-b = a
-print("a = ", a, "b = ", b)
+A = input("a = ")
+B = input("b = ")
+TEMP = A
+A = B
+B = A
+print("a = ", A, "b = ", B)
 
 # Задача-3: Запросите у пользователя год рождения. Если ему есть 18 лет, выведите: "Доступ разрешени"
 # иначе "Извините, пользование данным ресурсом только с 18 лет"
 
-age = input("How old are you? - ")
-if int(age) >= 18:
+AGE = input("How old are you? - ")
+if int(AGE) >= 18:
     print("Access is allowed")
 else:
     print("Access denied")
