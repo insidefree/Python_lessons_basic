@@ -36,7 +36,6 @@ if d > 0:
     x2 = (-b - math.sqrt(b**2 - 4 * a * c)) / 2 * a
     print("x1 = ", round(x1, 4), " x2 = ", round(x2, 4))
 elif d == 0:
-    print("i am here")
     x1 = -b / 2 * a
     x2 = x1
     print("x1 = ", round(x1, 4), " x2 = ", round(x2, 4))
