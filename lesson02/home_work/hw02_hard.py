@@ -1,22 +1,24 @@
 # Задание-1: уравнение прямой вида y = kx - b задано ввиде строки.
 # Определить координату y, точки с заданной координатой x
 
-equation = 'y = -12x + 11111140.2121' # I think we have to use here reqexp, but I don't have knowledge about it
+# I think we have to use here reqexp, but I don't have knowledge about it
+equation = 'y = -12x + 11111140.2121'
 x = 2.5
 # вычислите и выведите y
 
-print(equation.split())
+# print(equation.split())
 
 # Задание-2: Дата задана в виде строки формата 'dd.mm.yyyy', проверить корректно ли введена дата
 # Условия коррекности:
 # 1. День должен приводиться к целому числу в диапазоне от 1 до 30(31) (в зависимости от месяца, февраль не учитываем)
 # 2. Месяц должен приводиться к целому числу в диапазоне от 1 до 12
 # 3. Год приводиться к целому положитеьному числу в диапазоне от 1 до 9999
-# 4. Длина исходной строки для частей должна быть в соответствии с форматом (т.е. 2 - для дня, 2- месяц, 4 -год)
+# 4. Длина исходной строки для частей должна быть в соответствии с
+# форматом (т.е. 2 - для дня, 2- месяц, 4 -год)
 
-#############################################################################################
-############ COMPLETED IT IN hw02_normal in task 2 ##########################################
-#############################################################################################
+##########################################################################
+############ COMPLETED IT IN hw02_normal in task 2 #######################
+##########################################################################
 
 # Пример корректной даты
 date = '01.11.1985'
@@ -53,3 +55,47 @@ date = '-2.10.3001'
 #
 # Вход: 11
 # Выход: 5 3
+
+TOWER = {}
+n = 1
+i = 0
+floor_number = 0
+flat_count = 1
+floors_flat = []
+flat_direction = 0
+flat_amount = int(input('Enter flat amout = '))
+while flat_count < flat_amount:
+    flat_count += n**2
+    i = 0
+    flat_direction = flat_count - n**2
+    while i < n:
+        j = 0
+        floor_number += 1
+        while j < n:
+            j += 1
+            floors_flat.append(flat_direction)
+            flat_direction += 1
+        TOWER[floor_number] = floors_flat
+        i += 1
+        floors_flat = []
+    n += 1
+
+
+for floor in TOWER:
+    print('{} : {}'.format(floor, TOWER[floor]))
+
+flat_search = int(input('What flat do you want? - '))
+is_done = False
+
+for floor in TOWER:
+    for flat in TOWER[floor]:
+        # print('flat = ', flat)
+        if flat == flat_search:
+            print('Floor number {} and this flat is {} from left side'
+                  .format(floor, TOWER[floor].index(flat) + 1))
+            is_done = True
+            break
+    if is_done:
+        break
+if not is_done:
+    print('Our TOWER doesn\'t have flat with number {}'.format(flat_search))
