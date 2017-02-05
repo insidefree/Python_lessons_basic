@@ -69,7 +69,7 @@ MONTHS = {
 
 while True:
     CUSTOM_DATE = input('Enter date in format dd.mm.yyyy: ').split('.')
-    if len(CUSTOM_DATE) == 3 and int(CUSTOM_DATE[0]) in range(1, 32) and int(CUSTOM_DATE[1]) in range(1, 13) and int(CUSTOM_DATE[2]) in range(1950, 2051):
+    if len(CUSTOM_DATE) == 3 and int(CUSTOM_DATE[0]) in range(1, 32) and int(CUSTOM_DATE[1]) in range(1, 13) and int(CUSTOM_DATE[2]) in range(1, 9999):
         print('{} {} {} years'.format(DAYS[CUSTOM_DATE[0]], MONTHS[CUSTOM_DATE[1]], CUSTOM_DATE[2]))
         break
     else:
