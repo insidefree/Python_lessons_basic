@@ -21,7 +21,7 @@ def remove_folders(folder_name):
         print("Folder {} was deleted".format(folder_name))
     except FileNotFoundError as e:
         if e.errno == 2:
-            print("Directory \"dir_{}\" doesn't exist".format(i))
+            print("Directory {} doesn't exist".format(folder_name))
 
 # Задача-2:
 # Напишите скрипт отображающий папки текущей директории
@@ -37,6 +37,7 @@ def show_current_dir():
 # Напишите скрипт создающий копию файла, из которого запущен данный скрипт
 
 # test git amend
+
 
 def copy_current_file():
     split = str.split(__file__, ".")
