@@ -16,10 +16,6 @@ import lesson05.home_work.hw05_easy as my_utils
 # оформленныйе в виде соответствующих функций, и импортированные в данный файл из easy.py
 
 
-# my_utils.copy_current_file()
-# print(sys.argv)
-
-
 def print_help():
     print("cd - change directory --> example: 'python hw05_normal.py cd full_new_path'")
     print("ls - list directory --> example: 'python hw05_normal.py ls'")
