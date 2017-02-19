@@ -36,6 +36,7 @@ def show_current_dir():
 # Задача-3:
 # Напишите скрипт создающий копию файла, из которого запущен данный скрипт
 
+# test git amend
 
 def copy_current_file():
     split = str.split(__file__, ".")
