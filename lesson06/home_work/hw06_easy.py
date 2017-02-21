@@ -36,12 +36,10 @@ class Triangle(Figure):
         self.b = Figure.basis(b, c)
         self.c = Figure.basis(c, a)
 
-    @staticmethod
     def height_a(a, b, c):
         p = (a + b + c) / 2
         return 2 * math.sqrt(p * (p - a) * (p - b) * (p - c)) / 2
 
-    @staticmethod
     def basis(p01, p02):
         return math.sqrt((p02["x"] - p01["x"]) ** 2 + (p02["y"] - p01["y"]) ** 2)
 
@@ -66,7 +64,6 @@ class Trapeze(Figure):
         self.cd = Figure.basis(c, d)
         self.da = Figure.basis(d, a)
 
-    @staticmethod
     def basis(p01, p02):
         return math.sqrt((p02["x"] - p01["x"]) ** 2 + (p02["y"] - p01["y"]) ** 2)
 
