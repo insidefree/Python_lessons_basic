@@ -18,19 +18,23 @@ dd = {"x": 6, "y": 1}
 
 
 class Figure:
-    def __init__(self, *args):
-        self.args = args
+    def __init__(self, type):
+        self.type = type
+
+    @staticmethod
+    def basis(p01, p02):
+        return math.sqrt((p02["x"] - p01["x"]) ** 2 + (p02["y"] - p01["y"]) ** 2)
 
 
 class Triangle(Figure):
     def __init__(self, a, b, c):
-        Figure.__init__(self, a, b, c)
+        Figure.__init__(self, "Triangle")
         self.A = a
         self.B = b
         self.C = c
-        self.a = self.basis(a, b)
-        self.b = self.basis(b, c)
-        self.c = self.basis(c, a)
+        self.a = Figure.basis(a, b)
+        self.b = Figure.basis(b, c)
+        self.c = Figure.basis(c, a)
 
     @staticmethod
     def height_a(a, b, c):
@@ -50,16 +54,17 @@ class Triangle(Figure):
         return self.a + self.b + self.c
 
 
-class Trapeze:
+class Trapeze(Figure):
     def __init__(self, a, b, c, d):
+        Figure.__init__(self, "Trapeze")
         self.a = a
         self.b = b
         self.c = c
         self.d = d
-        self.ab = self.basis(a, b)
-        self.bc = self.basis(b, c)
-        self.cd = self.basis(c, d)
-        self.da = self.basis(d, a)
+        self.ab = Figure.basis(a, b)
+        self.bc = Figure.basis(b, c)
+        self.cd = Figure.basis(c, d)
+        self.da = Figure.basis(d, a)
 
     @staticmethod
     def basis(p01, p02):
@@ -86,11 +91,12 @@ class Trapeze:
         return (a + b) / 4 * math.sqrt(4 * c ** 2 - (a - b) ** 2)
 
 
-# tr1 = Triangle(a, b, c)
-# print(tr1.square)
-# print(tr1.perimeter)
-#
-# trap1 = Trapeze(aa, bb, cc, dd)
-# print(trap1.is_right)
-# print(trap1.perimeter)
-# print(trap1.square)
+tr1 = Triangle(a, b, c)
+print(tr1.type)
+print("Square = ", tr1.square)
+print("Perimeter = ", tr1.perimeter)
+
+trap1 = Trapeze(aa, bb, cc, dd)
+print(trap1.type)
+print("Square = ", trap1.perimeter)
+print("Perimeter = ", trap1.square)
